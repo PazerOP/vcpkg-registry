@@ -1,3 +1,5 @@
 {
-	"default": {}
+	"default": {
+		"mh-stuff": { "baseline": "1.0", "port-version": 0 }
+	}
 }
