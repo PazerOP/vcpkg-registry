@@ -2,8 +2,6 @@ vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO PazerOP/stuff
   HEAD_REF master
-  REF 0d94531f3e0989f624311309cb4698c86ed44c3d
-  SHA512 8de09eaf4243e1c6e97619eb6f1583de96585fc71c298ad1eba8bc0922b97981cc71cecb1e258befe6c910aedf22f5206055f1102e0ad66da264eaa342724acf
 )
 
 vcpkg_configure_cmake(
