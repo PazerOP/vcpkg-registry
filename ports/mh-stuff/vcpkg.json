@@ -4,6 +4,7 @@
 	"description": "Helper code and miscellaneous features I use",
 	"homepage": "https://github.com/PazerOP/stuff",
 	"dependencies": [
-		"fmt"
+		"fmt",
+		"catch2"
 	]
 }
