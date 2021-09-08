@@ -2,7 +2,7 @@
   "default": {
     "imgui-cmake": {
       "baseline": "2021-09-08",
-      "port-version": 2
+      "port-version": 3
     },
     "imgui-desktop": {
       "baseline": "2021-09-08",
