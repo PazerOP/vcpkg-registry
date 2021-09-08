@@ -12,6 +12,7 @@ vcpkg_configure_cmake(
 	OPTIONS -DBUILD_SHARED_LIBS=ON;-DBUILD_TESTING=OFF
 )
 
+vcpkg_copy_pdbs()
 vcpkg_install_cmake()
 vcpkg_fixup_cmake_targets()
 
