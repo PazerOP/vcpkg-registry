@@ -36,6 +36,7 @@ vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
 )
 
+vcpkg_copy_pdbs()
 vcpkg_cmake_build()
 vcpkg_fixup_cmake_targets()
 

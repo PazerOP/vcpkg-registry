@@ -10,6 +10,7 @@ vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
 )
 
+vcpkg_copy_pdbs()
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup()
 

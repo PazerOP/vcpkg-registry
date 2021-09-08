@@ -3,8 +3,11 @@
   "version-string": "2021-09-08",
   "description": "Desktop application framework using imgui",
   "homepage": "https://github.com/PazerOP/imgui_desktop",
+  "port-version": 2,
   "dependencies": [
     "imgui-cmake",
-    "sdl2"
+    "sdl2",
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
   ]
 }
