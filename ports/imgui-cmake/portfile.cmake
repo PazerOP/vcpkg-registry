@@ -24,6 +24,7 @@ find_program(GIT git)
 # 	LOGNAME imgui-cmake_submodule_update
 # )
 set(SOURCE_PATH "${CURRENT_BUILDTREES_DIR}/src/head")
+file(MAKE_DIRECTORY "${SOURCE_PATH}")
 vcpkg_execute_required_process(
 	COMMAND "${GIT}" clone https://github.com/PazerOP/imgui_cmake.git . --depth 1 --recurse-submodules
 	WORKING_DIRECTORY "${SOURCE_PATH}"
