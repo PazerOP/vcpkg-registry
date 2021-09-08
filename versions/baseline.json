@@ -1,6 +1,16 @@
 {
-	"default": {
-		"mh-stuff": { "baseline": "2021-09-08", "port-version": 2 },
-		"imgui-desktop": { "baseline": "2021-09-08", "port-version": 2 }
-	}
+  "default": {
+    "imgui-cmake": {
+      "baseline": "2021-09-08",
+      "port-version": 0
+    },
+    "imgui-desktop": {
+      "baseline": "2021-09-08",
+      "port-version": 0
+    },
+    "mh-stuff": {
+      "baseline": "2021-09-08",
+      "port-version": 0
+    }
+  }
 }
