@@ -1,5 +1,6 @@
 {
 	"default": {
-		"mh-stuff": { "baseline": "2021-09-08", "port-version": 2 }
+		"mh-stuff": { "baseline": "2021-09-08", "port-version": 2 },
+		"imgui-desktop": { "baseline": "2021-09-08", "port-version": 1 }
 	}
 }
