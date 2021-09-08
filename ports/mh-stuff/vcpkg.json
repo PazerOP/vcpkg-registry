@@ -1,6 +1,7 @@
 {
   "name": "mh-stuff",
   "version-string": "2021-09-08",
+  "port-version": 2,
   "description": "Helper code and miscellaneous features I use",
   "homepage": "https://github.com/PazerOP/stuff",
   "dependencies": [
