@@ -5,7 +5,7 @@
   "description": "CMake wrapper for imgui.",
   "homepage": "https://github.com/PazerOP/imgui_cmake",
   "dependencies": [
-    "vcpkg_cmake_build",
+    "vcpkg-cmake",
     "sdl2"
   ]
 }
