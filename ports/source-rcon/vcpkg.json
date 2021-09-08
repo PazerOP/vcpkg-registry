@@ -1,10 +1,11 @@
 {
   "name": "source-rcon",
   "version-string": "2021-09-08",
-  "port-version": 3,
+  "port-version": 4,
   "description": "C++ implementation of a Source engine RCON client.",
   "homepage": "https://github.com/PazerOP/SourceRCON",
   "dependencies": [
-    "mh-stuff"
+    "mh-stuff",
+    "vcpkg-cmake"
   ]
 }
