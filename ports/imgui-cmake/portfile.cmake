@@ -10,13 +10,13 @@ find_program(GIT git)
 vcpkg_execute_required_process(
 	COMMAND "${GIT}" rev-parse FETCH_HEAD
 	WORKING_DIRECTORY "${SOURCE_PATH}"
-	LOGNAME imgui-cmake_submodule_update
+	LOGNAME imgui-cmake_rev-parse
 	OUTPUT_VARIABLE IMGUI_CMAKE_HEAD_REF
 )
 vcpkg_execute_required_process(
 	COMMAND "${GIT}" checkout ${IMGUI_CMAKE_HEAD_REF}
 	WORKING_DIRECTORY "${SOURCE_PATH}"
-	LOGNAME imgui-cmake_submodule_update
+	LOGNAME imgui-cmake_checkout
 )
 vcpkg_execute_required_process(
 	COMMAND "${GIT}" submodule update --init --recursive
