@@ -1,9 +1,10 @@
 {
-	"name": "imgui-desktop",
-	"version-string": "2021-09-08",
-	"description": "Desktop application framework using imgui",
-	"homepage": "https://github.com/PazerOP/imgui_desktop",
-	"dependencies": [
-		"sdl2"
-	]
+  "name": "imgui-desktop",
+  "version-string": "2021-09-08",
+  "description": "Desktop application framework using imgui",
+  "homepage": "https://github.com/PazerOP/imgui_desktop",
+  "dependencies": [
+    "imgui-cmake",
+    "sdl2"
+  ]
 }
