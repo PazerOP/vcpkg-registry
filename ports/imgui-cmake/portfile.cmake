@@ -8,7 +8,7 @@ vcpkg_from_github(
 
 find_program(GIT git)
 vcpkg_execute_required_process(
-	COMMAND "${GIT}" init-submodules --update --recursive
+	COMMAND "${GIT}" submodule update --init --recursive
 	WORKING_DIRECTORY "${SOURCE_PATH}"
 )
 
