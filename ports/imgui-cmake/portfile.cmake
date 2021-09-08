@@ -1,10 +1,11 @@
 set(VCPKG_USE_HEAD_VERSION ON)
 
-# vcpkg_from_git(
-#   OUT_SOURCE_PATH SOURCE_PATH
-#   URL https://github.com/PazerOP/imgui_cmake.git
-#   HEAD_REF main
-# )
+vcpkg_from_git(
+  OUT_SOURCE_PATH SOURCE_PATH
+  URL https://github.com/PazerOP/imgui_cmake.git
+  HEAD_REF main
+  RECURSE_SUBMODULES true
+)
 
 find_program(GIT git)
 # vcpkg_execute_required_process(
@@ -23,14 +24,14 @@ find_program(GIT git)
 # 	WORKING_DIRECTORY "${SOURCE_PATH}"
 # 	LOGNAME imgui-cmake_submodule_update
 # )
-set(SOURCE_PATH "${CURRENT_BUILDTREES_DIR}/src/head")
-file(REMOVE_RECURSE "${SOURCE_PATH}")
-file(MAKE_DIRECTORY "${SOURCE_PATH}")
-vcpkg_execute_required_process(
-	COMMAND "${GIT}" clone --progress --verbose https://github.com/PazerOP/imgui_cmake.git . --depth 1 --recurse-submodules
-	WORKING_DIRECTORY "${SOURCE_PATH}"
-	LOGNAME imgui-cmake_git_clone
-)
+# set(SOURCE_PATH "${CURRENT_BUILDTREES_DIR}/src/head")
+# file(REMOVE_RECURSE "${SOURCE_PATH}")
+# file(MAKE_DIRECTORY "${SOURCE_PATH}")
+# vcpkg_execute_required_process(
+# 	COMMAND "${GIT}" clone --progress --verbose https://github.com/PazerOP/imgui_cmake.git . --depth 1 --recurse-submodules
+# 	WORKING_DIRECTORY "${SOURCE_PATH}"
+# 	LOGNAME imgui-cmake_git_clone
+# )
 
 vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
