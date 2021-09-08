@@ -10,4 +10,11 @@ SETLOCAL
 	ECHO Updating versions...
 	vcpkg x-add-version --all --overwrite-version --verbose %COMMON_ARGS%
 
+	ECHO Committing versions...
+	git commit versions/* -m "Updated versions"
+	git push
+
+	ECHO Latest revision:
+	git rev-parse HEAD
+
 ENDLOCAL
