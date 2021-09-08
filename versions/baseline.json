@@ -14,7 +14,7 @@
     },
     "source-rcon": {
       "baseline": "2021-09-08",
-      "port-version": 5
+      "port-version": 6
     }
   }
 }
