@@ -31,13 +31,12 @@ vcpkg_execute_required_process(
 	LOGNAME imgui-cmake_git_clone
 )
 
-
 vcpkg_configure_cmake(
 	SOURCE_PATH "${SOURCE_PATH}"
 	PREFER_NINJA
 )
 
-vcpkg_install_cmake()
+vcpkg_cmake_build()
 vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
