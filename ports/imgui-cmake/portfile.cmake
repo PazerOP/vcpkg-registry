@@ -3,7 +3,7 @@ set(VCPKG_USE_HEAD_VERSION ON)
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO PazerOP/imgui_cmake
-  HEAD_REF master
+  HEAD_REF main
 )
 
 find_program(GIT git)
