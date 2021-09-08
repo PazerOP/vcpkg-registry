@@ -7,11 +7,21 @@ vcpkg_from_git(
 )
 
 find_program(GIT git)
-# vcpkg_execute_required_process(
-vcpkg_execute_in_download_mode(
+vcpkg_execute_required_process(
+	COMMAND "${GIT}" rev-parse FETCH_HEAD
+	WORKING_DIRECTORY "${SOURCE_PATH}"
+	LOGNAME imgui-cmake_submodule_update
+	OUTPUT_VARIABLE IMGUI_CMAKE_HEAD_REF
+)
+vcpkg_execute_required_process(
+	COMMAND "${GIT}" checkout ${IMGUI_CMAKE_HEAD_REF}
+	WORKING_DIRECTORY "${SOURCE_PATH}"
+	LOGNAME imgui-cmake_submodule_update
+)
+vcpkg_execute_required_process(
 	COMMAND "${GIT}" submodule update --init --recursive
 	WORKING_DIRECTORY "${SOURCE_PATH}"
-	# LOGNAME imgui-cmake_submodule_update
+	LOGNAME imgui-cmake_submodule_update
 )
 
 vcpkg_configure_cmake(
