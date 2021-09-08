@@ -1,11 +1,11 @@
 {
   "name": "imgui-cmake",
   "version-string": "2021-09-08",
-  "port-version": 13,
+  "port-version": 14,
   "description": "CMake wrapper for imgui.",
   "homepage": "https://github.com/PazerOP/imgui_cmake",
   "dependencies": [
-    "vcpkg-cmake",
-    "sdl2"
+    "sdl2",
+    "vcpkg-cmake"
   ]
 }
