@@ -14,15 +14,15 @@ vcpkg_execute_required_process(
 	OUTPUT_VARIABLE IMGUI_CMAKE_HEAD_REF
 )
 vcpkg_execute_required_process(
-	COMMAND "${GIT}" checkout ${IMGUI_CMAKE_HEAD_REF}
+	COMMAND "${GIT}" checkout --recurse-submodules ${IMGUI_CMAKE_HEAD_REF}
 	WORKING_DIRECTORY "${SOURCE_PATH}"
 	LOGNAME imgui-cmake_checkout
 )
-vcpkg_execute_required_process(
-	COMMAND "${GIT}" submodule update --init --recursive
-	WORKING_DIRECTORY "${SOURCE_PATH}"
-	LOGNAME imgui-cmake_submodule_update
-)
+# vcpkg_execute_required_process(
+# 	COMMAND "${GIT}" submodule update --init --recursive
+# 	WORKING_DIRECTORY "${SOURCE_PATH}"
+# 	LOGNAME imgui-cmake_submodule_update
+# )
 
 vcpkg_configure_cmake(
 	SOURCE_PATH "${SOURCE_PATH}"
