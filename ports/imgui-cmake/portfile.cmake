@@ -1,8 +1,8 @@
 set(VCPKG_USE_HEAD_VERSION ON)
 
-vcpkg_from_github(
+vcpkg_from_git(
   OUT_SOURCE_PATH SOURCE_PATH
-  REPO PazerOP/imgui_cmake
+  REPO https://github.com/PazerOP/imgui_cmake.git
   HEAD_REF main
 )
 
