@@ -12,6 +12,10 @@
       "baseline": "2021-09-09",
       "port-version": 1
     },
+    "mh-cmake-common": {
+      "baseline": "2021-09-09",
+      "port-version": 1
+    },
     "mh-stuff": {
       "baseline": "2021-09-09",
       "port-version": 1
