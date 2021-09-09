@@ -5,6 +5,8 @@
   "description": "Output of https://github.com/dav1dde/glad-web",
   "homepage": "https://github.com/PazerOP/glad2-gl",
   "dependencies": [
-    "mh-cmake-common"
+    "mh-cmake-common",
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
   ]
 }
