@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.17)
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
@@ -14,17 +14,6 @@ function(mh_basic_install)
 		# multi-value keywords
 		"PROJ_INCLUDE_DIRS"
 	)
-
-	get_cmake_property(_variableNames CACHE_VARIABLES)
-	list (SORT _variableNames)
-	foreach (_variableName ${_variableNames})
-		message(STATUS "${_variableName}=${${_variableName}}")
-	endforeach()
-	get_cmake_property(_variableNames VARIABLES)
-	list (SORT _variableNames)
-	foreach (_variableName ${_variableNames})
-		message(STATUS "${_variableName}=${${_variableName}}")
-	endforeach()
 
 	if (DEFINED arg_UNPARSED_ARGUMENTS)
 		message(FATAL_ERROR "${CMAKE_CURRENT_FUNCTION} was passed extra arguments (${arg_UNPARSED_ARGUMENTS})")
@@ -47,7 +36,7 @@ function(mh_basic_install)
 	endif()
 
 	configure_package_config_file(
-		"${CMAKE_CURRENT_LIST_DIR}/mh-BasicInstall_config.cmake.in"
+		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-BasicInstall_config.cmake.in"
 		"${CMAKE_CURRENT_BINARY_DIR}/mh-BasicInstall_${arg_PROJ_NAME}_config.cmake"
 		INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
 	)
