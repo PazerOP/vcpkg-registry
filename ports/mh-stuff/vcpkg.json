@@ -1,10 +1,12 @@
 {
-  "name": "mh-cmake-common",
+  "name": "mh-stuff",
   "version-date": "2021-09-09",
-  "port-version": 1,
-  "description": "Common CMake configuration files",
+  "port-version": 2,
+  "description": "Helper code and miscellaneous features I use",
   "homepage": "https://github.com/PazerOP/stuff",
   "dependencies": [
+    "catch2",
+    "fmt",
     "vcpkg-cmake",
     "vcpkg-cmake-config"
   ]
