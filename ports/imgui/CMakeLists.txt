@@ -57,6 +57,12 @@ if(IMGUI_BUILD_GLUT_BINDING)
     target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_glut.cpp)
 endif()
 
+if (IMGUI_BUILD_GLAD2_BINDING)
+    find_package(glad2-gl REQUIRED)
+    target_link_libraries(${PROJECT_NAME} PUBLIC mh::glad2-gl)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "IMGUI_IMPL_OPENGL_LOADER_GLAD2")
+endif()
+
 if(IMGUI_BUILD_METAL_BINDING)
     target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_metal.mm)
 endif()
