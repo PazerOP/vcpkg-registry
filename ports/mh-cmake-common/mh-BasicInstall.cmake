@@ -36,8 +36,8 @@ function(mh_basic_install)
 	endif()
 
 	configure_package_config_file(
-		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-BasicInstall_config.cmake.in"
-		"${CMAKE_CURRENT_BINARY_DIR}/mh-BasicInstall_${arg_PROJ_NAME}_config.cmake"
+		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-BasicInstall-config.cmake.in"
+		"${CMAKE_CURRENT_BINARY_DIR}/${arg_PROJ_NAME}-config.cmake"
 		INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
 	)
 
