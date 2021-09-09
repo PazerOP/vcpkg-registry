@@ -63,8 +63,10 @@ function(mh_basic_install)
 			"${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
 	)
 
-	foreach (INCLUDE_DIR_ITER "${arg_PROJ_INCLUDE_DIRS}")
-		install(DIRECTORY "${INCLUDE_DIR_ITER}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
-	endforeach()
+	if (DEFINED arg_PROJ_INCLUDE_DIRS)
+		foreach (INCLUDE_DIR_ITER "${arg_PROJ_INCLUDE_DIRS}")
+			install(DIRECTORY "${INCLUDE_DIR_ITER}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+		endforeach()
+	endif()
 
 endfunction()
