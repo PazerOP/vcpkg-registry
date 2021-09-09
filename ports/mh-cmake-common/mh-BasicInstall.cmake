@@ -25,7 +25,9 @@ function(mh_basic_install)
 		endif()
 
 		set(arg_PROJ_NAME "${PROJECT_NAME}")
+		message(STATUS "arg_PROJ_NAME = ${arg_PROJ_NAME}, PROJECT_NAME = ${PROJECT_NAME}")
 	endif()
+	message(STATUS "arg_PROJ_NAME = ${arg_PROJ_NAME}, PROJECT_NAME = ${PROJECT_NAME}")
 
 	if (NOT DEFINED arg_PROJ_VERSION)
 		if (NOT DEFINED PROJECT_VERSION)
