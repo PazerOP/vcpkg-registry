@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.17)
 
 include(CheckCXXSourceCompiles)
 
@@ -22,7 +22,7 @@ function(mh_check_cxx_unicode_support IS_SUPPORTED_OUT target)
 
 	try_compile(IS_SUPPORTED
 		${CMAKE_CURRENT_BINARY_DIR}
-		"${CMAKE_CURRENT_LIST_DIR}/mh-CheckUnicodeSupport.cpp"
+		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-CheckUnicodeSupport.cpp"
 		CXX_STANDARD 20
 		COMPILE_DEFINITIONS "${TARGET_CXX_OPTS}"
 		LINK_OPTIONS "${TARGET_LINK_OPTS}"

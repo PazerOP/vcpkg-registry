@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.17)
 
 include(CheckCXXCompilerFlag)
 
@@ -23,7 +23,7 @@ function(mh_check_cxx_coroutine_support IS_SUPPORTED_OUT REQUIRED_FLAGS_OUT)
 
 	try_compile(IS_SUPPORTED
 		${CMAKE_CURRENT_BINARY_DIR}
-		"${CMAKE_CURRENT_LIST_DIR/mh-CheckCoroutineSupport.cpp"
+		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-CheckCoroutineSupport.cpp"
 		CXX_STANDARD 20
 		COMPILE_DEFINITIONS "${REQUIRED_FLAGS} ${DIRECTORY_CXX_OPTS}"
 		LINK_OPTIONS ${DIRECTORY_LINK_OPTS}
