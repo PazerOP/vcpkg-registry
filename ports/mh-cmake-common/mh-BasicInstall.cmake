@@ -4,7 +4,7 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 function(mh_basic_install)
-	cmake_parse_arguments(
+	cmake_parse_arguments(PARSE_ARGV 0
 		# arg variable prefix
 		"arg"
 		# options
