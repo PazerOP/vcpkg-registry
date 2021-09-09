@@ -1,12 +1,13 @@
 {
   "name": "mh-stuff",
   "version-date": "2021-09-09",
-  "port-version": 3,
+  "port-version": 4,
   "description": "Helper code and miscellaneous features I use",
   "homepage": "https://github.com/PazerOP/stuff",
   "dependencies": [
     "catch2",
     "fmt",
+    "mh-cmake-common",
     "vcpkg-cmake",
     "vcpkg-cmake-config"
   ]
