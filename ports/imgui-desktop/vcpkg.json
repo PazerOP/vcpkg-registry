@@ -1,7 +1,7 @@
 {
   "name": "imgui-desktop",
   "version-date": "2021-09-09",
-  "port-version": 2,
+  "port-version": 3,
   "description": "Desktop application framework using imgui",
   "homepage": "https://github.com/PazerOP/imgui_desktop",
   "dependencies": [
@@ -16,6 +16,8 @@
     },
     "mh-cmake-common",
     "mh-stuff",
-    "sdl2"
+    "sdl2",
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
   ]
 }
