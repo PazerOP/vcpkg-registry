@@ -15,6 +15,12 @@ function(mh_basic_install)
 		"PROJ_INCLUDE_DIRS"
 	)
 
+	get_cmake_property(_variableNames VARIABLES)
+	list (SORT _variableNames)
+	foreach (_variableName ${_variableNames})
+		message(STATUS "${_variableName}=${${_variableName}}")
+	endforeach()
+
 	if (DEFINED arg_UNPARSED_ARGUMENTS)
 		message(FATAL_ERROR "${CMAKE_CURRENT_FUNCTION} was passed extra arguments (${arg_UNPARSED_ARGUMENTS})")
 	endif()
