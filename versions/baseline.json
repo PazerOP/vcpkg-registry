@@ -2,7 +2,7 @@
   "default": {
     "glad2-gl": {
       "baseline": "2021-09-09",
-      "port-version": 5
+      "port-version": 6
     },
     "imgui": {
       "baseline": "1.84.2",
