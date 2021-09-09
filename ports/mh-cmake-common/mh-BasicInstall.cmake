@@ -15,6 +15,11 @@ function(mh_basic_install)
 		"PROJ_INCLUDE_DIRS"
 	)
 
+	get_cmake_property(_variableNames CACHE_VARIABLES)
+	list (SORT _variableNames)
+	foreach (_variableName ${_variableNames})
+		message(STATUS "${_variableName}=${${_variableName}}")
+	endforeach()
 	get_cmake_property(_variableNames VARIABLES)
 	list (SORT _variableNames)
 	foreach (_variableName ${_variableNames})
