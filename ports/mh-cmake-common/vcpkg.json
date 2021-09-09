@@ -1,7 +1,7 @@
 {
   "name": "mh-cmake-common",
   "version-date": "2021-09-09",
-  "port-version": 12,
+  "port-version": 13,
   "description": "Common CMake configuration files",
   "homepage": "https://github.com/PazerOP/stuff"
 }
