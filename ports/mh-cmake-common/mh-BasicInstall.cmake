@@ -47,7 +47,10 @@ function(mh_basic_install)
 		COMPATIBILITY SameMajorVersion
 	)
 
-	install(TARGETS ${arg_PROJ_NAME} EXPORT ${arg_PROJ_NAME}_targets)
+	install(TARGETS ${arg_PROJ_NAME}
+		EXPORT ${arg_PROJ_NAME}_targets
+		PUBLIC_HEADER
+	)
 
 	install(
 		EXPORT ${arg_PROJ_NAME}_targets
