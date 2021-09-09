@@ -1,3 +1,5 @@
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
 set(VCPKG_USE_HEAD_VERSION ON)
 
 vcpkg_from_github(
