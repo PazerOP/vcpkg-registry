@@ -1,7 +1,7 @@
 {
   "name": "imgui-desktop",
-  "version-string": "2021-09-08",
-  "port-version": 4,
+  "version-date": "2021-09-09",
+  "port-version": 1,
   "description": "Desktop application framework using imgui",
   "homepage": "https://github.com/PazerOP/imgui_desktop",
   "dependencies": [
