@@ -1,20 +1,21 @@
 {
   "name": "imgui-desktop",
   "version-date": "2021-09-09",
-  "port-version": 10,
+  "port-version": 11,
   "description": "Desktop application framework using imgui",
   "homepage": "https://github.com/PazerOP/imgui_desktop",
   "dependencies": [
     "glad2-gl",
+    "mh-cmake-common",
     {
-      "name": "imgui",
+      "name": "mh-imgui",
       "features": [
+        "glad2-binding",
         "opengl2-binding",
         "opengl3-binding",
         "sdl2-binding"
       ]
     },
-    "mh-cmake-common",
     "mh-stuff",
     "sdl2",
     "vcpkg-cmake",
