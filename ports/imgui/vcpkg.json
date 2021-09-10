@@ -1,7 +1,7 @@
 {
   "name": "imgui",
   "version": "1.84.2",
-  "port-version": 5,
+  "port-version": 6,
   "description": "Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.",
   "homepage": "https://github.com/ocornut/imgui",
   "features": {
@@ -30,6 +30,12 @@
       "description": "Build font atlases using FreeType instead of stb_truetype",
       "dependencies": [
         "freetype"
+      ]
+    },
+    "glad2-binding": {
+      "description": "Make available GLAD 2 binding",
+      "dependencies": [
+        "glad2-gl"
       ]
     },
     "glfw-binding": {

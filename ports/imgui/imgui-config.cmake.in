@@ -4,6 +4,10 @@ cmake_policy(SET CMP0012 NEW)
 
 include(CMakeFindDependencyMacro)
 
+if (@IMGUI_BUILD_GLAD2_BINDING@)
+    find_dependency(glad2-gl CONFIG)
+endif()
+
 if (@IMGUI_BUILD_GLFW_BINDING@)
     find_dependency(glfw3 CONFIG)
 endif()
