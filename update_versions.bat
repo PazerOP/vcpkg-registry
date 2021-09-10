@@ -9,7 +9,7 @@ SETLOCAL
 
 	ECHO Committing ports...
 	git add ports/* || EXIT /b %ERRORLEVEL%
-	git commit ports/* -m "Updated ports" || EXIT /b %ERRORLEVEL%
+	git commit ports/* -m "Updated ports"
 
 	ECHO Updating versions...
 	vcpkg x-add-version --all --overwrite-version --verbose %COMMON_ARGS% || EXIT /b %ERRORLEVEL%
