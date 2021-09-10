@@ -1,7 +1,7 @@
 {
-  "name": "imgui",
+  "name": "mh-imgui",
   "version-date": "2021-09-10",
-  "port-version": 1,
+  "port-version": 2,
   "description": "Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.",
   "homepage": "https://github.com/ocornut/imgui",
   "features": {

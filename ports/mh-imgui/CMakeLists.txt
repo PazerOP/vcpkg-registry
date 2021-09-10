@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(imgui CXX)
+project(mh-imgui CXX)
 
 set(CMAKE_DEBUG_POSTFIX d)
 
