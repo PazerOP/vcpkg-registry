@@ -22,7 +22,6 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     dx10-binding                IMGUI_BUILD_DX10_BINDING
     dx11-binding                IMGUI_BUILD_DX11_BINDING
     dx12-binding                IMGUI_BUILD_DX12_BINDING
-    glad-binding                IMGUI_BUILD_GLAD_BINDING
     glad2-binding               IMGUI_BUILD_GLAD2_BINDING
     glfw-binding                IMGUI_BUILD_GLFW_BINDING
     glut-binding                IMGUI_BUILD_GLUT_BINDING
