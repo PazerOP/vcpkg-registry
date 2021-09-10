@@ -35,7 +35,7 @@
     "glad2-binding": {
       "description": "Make available GLAD 2 binding",
       "dependencies": [
-        "glad2-gl"
+        "mh-glad2-gl"
       ]
     },
     "glfw-binding": {
