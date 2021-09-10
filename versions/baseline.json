@@ -5,8 +5,8 @@
       "port-version": 6
     },
     "imgui": {
-      "baseline": "1.84.2",
-      "port-version": 6
+      "baseline": "2021-09-10",
+      "port-version": 1
     },
     "imgui-cmake": {
       "baseline": "2021-09-09",
