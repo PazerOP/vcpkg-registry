@@ -5,7 +5,7 @@ set(VCPKG_USE_HEAD_VERSION ON)
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO PazerOP/imgui
-	HEAD_REF master
+	HEAD_REF sdl-multi-windows
 )
 
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/imgui-config.cmake.in DESTINATION ${SOURCE_PATH})
