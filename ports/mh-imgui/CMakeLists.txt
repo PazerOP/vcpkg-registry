@@ -4,7 +4,7 @@ project(mh-imgui CXX)
 set(CMAKE_DEBUG_POSTFIX d)
 
 add_library(${PROJECT_NAME} "")
-add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+add_library(mh::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 target_include_directories(
     ${PROJECT_NAME}
     PUBLIC
