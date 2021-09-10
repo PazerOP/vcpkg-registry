@@ -187,7 +187,6 @@ if(NOT IMGUI_SKIP_HEADERS)
         install(
             FILES
                 ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_opengl3.h
-                ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_opengl3_loader.h
             DESTINATION
                 include
         )
