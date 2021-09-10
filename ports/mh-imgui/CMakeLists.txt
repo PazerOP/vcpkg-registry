@@ -220,7 +220,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake DESTINATI
 
 install(
     EXPORT ${PROJECT_NAME}_target
-    NAMESPACE ${PROJECT_NAME}::
+    NAMESPACE mh::
     FILE ${PROJECT_NAME}-targets.cmake
     DESTINATION share/${PROJECT_NAME}
 )
