@@ -59,7 +59,7 @@ endif()
 
 if (IMGUI_BUILD_GLAD2_BINDING)
     find_package(glad2-gl REQUIRED)
-    target_link_libraries(${PROJECT_NAME} PUBLIC mh::glad2-gl)
+    target_link_libraries(${PROJECT_NAME} PRIVATE mh::glad2-gl)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "IMGUI_IMPL_OPENGL_LOADER_GLAD2")
 endif()
 
@@ -216,7 +216,7 @@ endif()
 include(CMakePackageConfigHelpers)
 configure_package_config_file(imgui-config.cmake.in ${PROJECT_NAME}-config.cmake INSTALL_DESTINATION share/${PROJECT_NAME})
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake DESTINATION share/imgui)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake DESTINATION share/${PROJECT_NAME})
 
 install(
     EXPORT ${PROJECT_NAME}_target
