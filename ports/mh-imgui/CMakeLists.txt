@@ -59,7 +59,7 @@ endif()
 
 if (IMGUI_BUILD_GLAD2_BINDING)
     find_package(mh-glad2-gl REQUIRED)
-    target_link_libraries(${PROJECT_NAME} PRIVATE mh::glad2-gl)
+    target_link_libraries(${PROJECT_NAME} PRIVATE mh::mh-glad2-gl)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "IMGUI_IMPL_OPENGL_LOADER_GLAD2")
 endif()
 
