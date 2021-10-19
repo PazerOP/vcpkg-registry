@@ -35,32 +35,43 @@ function(mh_basic_install)
 		set(arg_PROJ_VERSION "${PROJECT_VERSION}")
 	endif()
 
+	SET(NAMESPACE "mh")
+	set(FULL_PROJ_NAME "${arg_PROJ_NAME}")
+	string(REGEX REPLACE "${NAMESPACE}-(.+)" "\\1" STRIPPED_PROJ_NAME "${FULL_PROJ_NAME}")
+	message(WARNING "FULL_PROJ_NAME = ${FULL_PROJ_NAME}")
+	message(WARNING "STRIPPED_PROJ_NAME = ${STRIPPED_PROJ_NAME}")
+	# if (arg_PROJ_NAME MATCHES "${NAMESPACE}-(.+)")
+	# else()
+	# 	set(STRIPPED_PROJ_NAME "${FULL_PROJ_NAME}")
+	# endif()
+	add_library("${NAMESPACE}::${STRIPPED_PROJ_NAME}" ALIAS "${FULL_PROJ_NAME}")
+
 	configure_package_config_file(
 		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-BasicInstall-config.cmake.in"
-		"${CMAKE_CURRENT_BINARY_DIR}/${arg_PROJ_NAME}-config.cmake"
-		INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
+		"${CMAKE_CURRENT_BINARY_DIR}/${FULL_PROJ_NAME}-config.cmake"
+		INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${FULL_PROJ_NAME}"
 	)
 
 	write_basic_package_version_file(
-		"${CMAKE_CURRENT_BINARY_DIR}/${arg_PROJ_NAME}-config-version.cmake"
+		"${CMAKE_CURRENT_BINARY_DIR}/${FULL_PROJ_NAME}-config-version.cmake"
 		VERSION ${arg_PROJ_VERSION}
 		COMPATIBILITY SameMajorVersion
 	)
 
-	install(TARGETS ${arg_PROJ_NAME} EXPORT ${arg_PROJ_NAME}_targets)
+	install(TARGETS ${FULL_PROJ_NAME} EXPORT ${FULL_PROJ_NAME}_targets)
 
 	install(
-		EXPORT ${arg_PROJ_NAME}_targets
-		NAMESPACE mh::
-		DESTINATION "${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
+		EXPORT ${FULL_PROJ_NAME}_targets
+		NAMESPACE "${NAMESPACE}::"
+		DESTINATION "${CMAKE_INSTALL_DATADIR}/${FULL_PROJ_NAME}"
 	)
 
 	install(
 		FILES
-			"${CMAKE_CURRENT_BINARY_DIR}/${arg_PROJ_NAME}-config.cmake"
-			"${CMAKE_CURRENT_BINARY_DIR}/${arg_PROJ_NAME}-config-version.cmake"
+			"${CMAKE_CURRENT_BINARY_DIR}/${FULL_PROJ_NAME}-config.cmake"
+			"${CMAKE_CURRENT_BINARY_DIR}/${FULL_PROJ_NAME}-config-version.cmake"
 		DESTINATION
-			"${CMAKE_INSTALL_DATADIR}/${arg_PROJ_NAME}"
+			"${CMAKE_INSTALL_DATADIR}/${FULL_PROJ_NAME}"
 	)
 
 	if (DEFINED arg_PROJ_INCLUDE_DIRS)
