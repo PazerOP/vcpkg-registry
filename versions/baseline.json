@@ -1,8 +1,8 @@
 {
   "default": {
     "mh-cmake-common": {
-      "baseline": "2021-09-09",
-      "port-version": 20
+      "baseline": "2021-10-19",
+      "port-version": 1
     },
     "mh-glad2-gl": {
       "baseline": "2021-10-19",
