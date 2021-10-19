@@ -44,7 +44,7 @@ function(mh_basic_install)
 	# else()
 	# 	set(STRIPPED_PROJ_NAME "${FULL_PROJ_NAME}")
 	# endif()
-	add_library("${NAMESPACE}::${STRIPPED_PROJ_NAME}" ALIAS "${FULL_PROJ_NAME}")
+	add_library("${NAMESPACE}::${FULL_PROJ_NAME}" ALIAS "${FULL_PROJ_NAME}")
 
 	configure_package_config_file(
 		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-BasicInstall-config.cmake.in"
