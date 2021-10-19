@@ -13,8 +13,8 @@
       "port-version": 5
     },
     "mh-imgui-desktop": {
-      "baseline": "2021-09-10",
-      "port-version": 2
+      "baseline": "2021-10-19",
+      "port-version": 1
     },
     "mh-source-rcon": {
       "baseline": "2021-09-10",
