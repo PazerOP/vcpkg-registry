@@ -2,7 +2,7 @@
 
 SETLOCAL
 
-	SET COMMON_ARGS=--x-builtin-ports-root=../my_vcpkg_repo/ports/ --x-builtin-registry-versions-dir=../my_vcpkg_repo/versions/
+	SET COMMON_ARGS=--x-builtin-ports-root="%~dp0/ports/" --x-builtin-registry-versions-dir="%~dp0/versions/"
 
 	ECHO Formatting manifests...
 	vcpkg format-manifest --all %COMMON_ARGS% || EXIT /b %ERRORLEVEL%
