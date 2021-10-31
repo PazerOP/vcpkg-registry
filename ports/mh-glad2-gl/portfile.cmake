@@ -4,7 +4,7 @@ vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO PazerOP/glad2-gl
   REF 08994aff5ddebf8f2e7155d1823bf7c63ee4c1cd
-  SHA512 1
+  SHA512 0
 )
 
 vcpkg_cmake_configure(
