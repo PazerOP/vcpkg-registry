@@ -37,7 +37,7 @@ jobs:
           -username "${{ github.repository_owner }}"
           -password "${{ github.token }}"
 
-      - run: ${{ github.action_path }}/update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}"
+      - run: ./update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}"
         shell: pwsh
 
       - name: Make sure we can build
