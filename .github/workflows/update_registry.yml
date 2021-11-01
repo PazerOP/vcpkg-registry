@@ -11,6 +11,11 @@ on:
 
 concurrency: "registry_modification"
 
+env:
+  VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
+  VCPKG_FEATURE_FLAGS: manifests,binarycaching
+  X_VCPKG_NUGET_ID_PREFIX: mh-vcpkg-registry
+
 jobs:
   update:
     runs-on: ${{ matrix.os }}
@@ -31,4 +36,31 @@ jobs:
           -name "GitHub"
           -username "${{ github.repository_owner }}"
           -password "${{ github.token }}"
+
+      - run: ${{ github.action_path }}/update-registry.ps1 -PortName "${{ inputs.port-name }}" -PortRef "${{ inputs.port-ref }}"
+        shell: pwsh
+
+      - name: Make sure we can build
+        run: vcpkg install ${{ inputs.port-name }} --overlay-ports "ports"
+
+      - name: Format all manifests
+        run: vcpkg format-manifest --all --x-buildin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
+
+      - name: Commit ports
+        uses: EndBug/add-and-commit@v7.4.0
+        with:
+          add: 'ports/*'
+          message: "Updated ports"
+          push: false
+
+      - name: Update versions
+        run: vcpkg x-add-version --all --overwrite-version --verbose --x-builtin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
+
+      - name: Commit versions & push
+        uses: EndBug/add-and-commit@v7.4.0
+        with:
+          add: 'ports/*'
+          message: "Updated ports"
+          push: true
+
 
