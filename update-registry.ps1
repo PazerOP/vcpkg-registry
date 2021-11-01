@@ -10,17 +10,17 @@ $ErrorActionPreference = "Stop"
 Write-Host -ForegroundColor Green "Removing any old installations of $PortName..."
 vcpkg remove "$PortName"
 
-$registryRoot = "vcpkg-registry"
+$registryRoot = "" # "vcpkg-registry/"
 # Write-Host -ForegroundColor Green "Checking out vcpkg registry..."
 # Remove-Item -LiteralPath $registryRoot -Force -Recurse -ErrorAction Ignore
 # git clone "https://github.com/PazerOP/vcpkg-registry.git" "$registryRoot"
 
 # Figure out paths
-$allPortsRoot = $registryRoot + "/ports/"
-$allVersionsRoot = $registryRoot + "/versions/"
-$portRoot = $allPortsRoot + $PortName
-$portfilePath = $portRoot + "/portfile.cmake"
-$portJsonPath = $portRoot + "/vcpkg.json"
+$allPortsRoot = $registryRoot + "ports/"
+$allVersionsRoot = $registryRoot + "versions/"
+$portRoot = $allPortsRoot + $PortName + "/"
+$portfilePath = $portRoot + "portfile.cmake"
+$portJsonPath = $portRoot + "vcpkg.json"
 $overlayPortsArg = "--overlay-ports=`"$allPortsRoot`""
 
 Write-Host -ForegroundColor Green "Determining SHA512 hash for $PortName@$PortRef..."
