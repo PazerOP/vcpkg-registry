@@ -14,7 +14,7 @@ concurrency: "registry_modification"
 env:
   VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
   VCPKG_FEATURE_FLAGS: manifests,binarycaching
-  X_VCPKG_NUGET_ID_PREFIX: mh-vcpkg-registry
+  X_VCPKG_NUGET_ID_PREFIX: mvr # mh-vcpkg-registry
 
 jobs:
   update:
@@ -41,6 +41,11 @@ jobs:
 
       - name: Format all manifests
         run: vcpkg format-manifest --all --x-builtin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
+
+      - name: Configure git
+        run: |
+          git config --global user.email "mrhaynie@live.com"
+          git config --global user.name "Matt Haynie (vcpkg-registry-update)"
 
       - name: Commit ports
         run: |
