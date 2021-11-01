@@ -56,7 +56,7 @@ jobs:
         uses: EndBug/add-and-commit@v7.4.0
         with:
           add: 'ports/*'
-          message: "Updated ports"
+          message: "Updated versions"
           push: true
 
 
