@@ -37,11 +37,11 @@ jobs:
           -username "${{ github.repository_owner }}"
           -password "${{ github.token }}"
 
-      - run: ${{ github.action_path }}/update-registry.ps1 -PortName "${{ inputs.port-name }}" -PortRef "${{ inputs.port-ref }}"
+      - run: ${{ github.action_path }}/update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}"
         shell: pwsh
 
       - name: Make sure we can build
-        run: vcpkg install ${{ inputs.port-name }} --overlay-ports "ports"
+        run: vcpkg install ${{ github.event.inputs.port-name }} --overlay-ports "ports"
 
       - name: Format all manifests
         run: vcpkg format-manifest --all --x-buildin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
