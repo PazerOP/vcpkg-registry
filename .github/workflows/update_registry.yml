@@ -20,7 +20,7 @@ jobs:
   update:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
 

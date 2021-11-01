@@ -24,7 +24,7 @@ $portJsonPath = $portRoot + "vcpkg.json"
 $overlayPortsArg = "--overlay-ports=`"$allPortsRoot`""
 
 Write-Host -ForegroundColor Green "Determining SHA512 hash for $PortName@$PortRef..."
-$downloadedPortZip = Invoke-WebRequest -Uri "https://github.com/PazerOP/glad2-gl/archive/$PortRef.zip"
+$downloadedPortZip = Invoke-WebRequest -Uri "https://github.com/PazerOP/glad2-gl/archive/$PortRef.tar.gz"
 $refsha512 = (Get-FileHash -InputStream $downloadedPortZip.RawContentStream -Algorithm SHA512).Hash
 Write-Host -ForegroundColor DarkGreen "`tSHA512 = $refsha512"
 
