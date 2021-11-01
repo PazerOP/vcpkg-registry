@@ -43,20 +43,28 @@ jobs:
         run: vcpkg format-manifest --all --x-builtin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
 
       - name: Commit ports
-        uses: EndBug/add-and-commit@v7.4.0
-        with:
-          add: 'ports/*'
-          message: "Updated ports"
-          push: false
+        run: |
+          git add "ports/*"
+          git commit "ports/*" -m "Updated ports"
+        # uses: EndBug/add-and-commit@v7.4.0
+        # with:
+        #   add: 'ports/*'
+        #   message: "Updated ports"
+        #   push: false
 
       - name: Update versions
         run: vcpkg x-add-version --all --overwrite-version --verbose --x-builtin-ports-root="ports/" --x-builtin-registry-versions-dir="versions/"
 
-      - name: Commit versions & push
-        uses: EndBug/add-and-commit@v7.4.0
-        with:
-          add: 'ports/*'
-          message: "Updated versions"
-          push: true
+      - name: Commit versions
+        run: |
+          git add "versions/*"
+          git commit "versions/*" -m "Updated versions"
+      #   uses: EndBug/add-and-commit@v7.4.0
+      #   with:
+      #     add: 'versions/*'
+      #     message: "Updated versions"
+      #     push: true
+
+      - run: git push
 
 
