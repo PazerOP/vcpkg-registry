@@ -76,11 +76,11 @@ if ($vcpkgJson."version-date" -ne $currentDate) {
 $vcpkgJson | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $portJsonPath;
 
 # Make sure we can build
-Write-Host -ForegroundColor Green "Testing build..."
-vcpkg install "$PortName" --debug $overlayPortsArg
-if ($LASTEXITCODE -ne 0) {
-	Write-Error "Failed to build $PortName"
-}
+# Write-Host -ForegroundColor Green "Testing build..."
+# vcpkg install "$PortName" --debug $overlayPortsArg
+# if ($LASTEXITCODE -ne 0) {
+# 	Write-Error "Failed to build $PortName"
+# }
 
 # Set-Location -LiteralPath $registryRoot
 
