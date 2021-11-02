@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: PazerOP/gha-setup-nuget@HEAD
 
-      - run: ./update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}" -UserRepoName "${{ github.event.inputs.repo-name }}"
+      - run: ./update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}" -UserRepoName "${{ github.event.inputs.user-repo-name }}"
         shell: pwsh
 
       - name: Make sure we can build
