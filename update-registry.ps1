@@ -2,7 +2,9 @@ param(
 	[Parameter(Mandatory=$true)]
 	[string]$PortName,
 	[Parameter(Mandatory=$true)]
-	[string]$PortRef
+	[string]$PortRef,
+	[Parameter(Mandatory=$true)]
+	[string]$RepoName
 )
 
 $ErrorActionPreference = "Stop"
@@ -24,7 +26,7 @@ $portJsonPath = $portRoot + "vcpkg.json"
 $overlayPortsArg = "--overlay-ports=`"$allPortsRoot`""
 
 Write-Host -ForegroundColor Green "Determining SHA512 hash for $PortName@$PortRef..."
-$downloadedPortZip = Invoke-WebRequest -Uri "https://github.com/PazerOP/glad2-gl/archive/$PortRef.tar.gz"
+$downloadedPortZip = Invoke-WebRequest -Uri "https://github.com/PazerOP/$RepoName/archive/$PortRef.tar.gz"
 $refsha512 = (Get-FileHash -InputStream $downloadedPortZip.RawContentStream -Algorithm SHA512).Hash
 Write-Host -ForegroundColor DarkGreen "`tSHA512 = $refsha512"
 

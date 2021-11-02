@@ -8,6 +8,9 @@ on:
       port-ref:
         description: SHA hash of the updated port
         required: true
+      repo-name:
+        description: Name of the repo the port is being updated from
+        required: true
 
 concurrency: "registry_modification"
 
@@ -22,18 +25,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: PazerOP/gha-setup-nuget@HEAD
 
-      - name: Setup NuGet Credentials
-        shell: bash
-        run: >
-          nuget sources add
-          -source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
-          -storepasswordincleartext
-          -name "GitHub"
-          -username "${{ github.repository_owner }}"
-          -password "${{ github.token }}"
-
-      - run: ./update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}"
+      - run: ./update-registry.ps1 -PortName "${{ github.event.inputs.port-name }}" -PortRef "${{ github.event.inputs.port-ref }}" -RepoName "${{ github.event.inputs.repo-name }}"
         shell: pwsh
 
       - name: Make sure we can build
