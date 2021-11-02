@@ -5,8 +5,8 @@
       "port-version": 6
     },
     "mh-glad2-gl": {
-      "baseline": "2021-11-01",
-      "port-version": 2
+      "baseline": "2021-11-02",
+      "port-version": 1
     },
     "mh-imgui": {
       "baseline": "2021-10-19",
