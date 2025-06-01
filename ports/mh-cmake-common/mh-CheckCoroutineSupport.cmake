@@ -31,7 +31,6 @@ function(mh_check_cxx_coroutine_support IS_SUPPORTED_OUT REQUIRED_FLAGS_OUT)
 
 	get_directory_property(DIRECTORY_CXX_OPTS COMPILE_OPTIONS)
 	get_directory_property(DIRECTORY_LINK_OPTS LINK_OPTIONS)
-	message("DIRECTORY_CXX_OPTS = ${DIRECTORY_CXX_OPTS}, DIRECTORY_LINK_OPTS = ${DIRECTORY_LINK_OPTS}")
 
 	# If native support is available, we already know it works
 	if (COROUTINES_NATIVE_SUPPORT)
@@ -48,7 +47,6 @@ function(mh_check_cxx_coroutine_support IS_SUPPORTED_OUT REQUIRED_FLAGS_OUT)
 		)
 	endif()
 
-	message("${CMAKE_CURRENT_FUNCTION}(${IS_SUPPORTED_OUT}=${IS_SUPPORTED} ${REQUIRED_FLAGS_OUT}=${REQUIRED_FLAGS})")
 	if (NOT IS_SUPPORTED)
 		message("${CMAKE_CURRENT_FUNCTION} output = ${TRY_COMPILE_OUTPUT}")
 	endif()
