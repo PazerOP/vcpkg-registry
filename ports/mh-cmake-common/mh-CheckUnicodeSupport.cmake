@@ -20,19 +20,35 @@ function(mh_check_cxx_unicode_support IS_SUPPORTED_OUT target)
 
 	message("TARGET_TYPE = ${TARGET_TYPE}, TARGET_CXX_OPTS = ${TARGET_CXX_OPTS}, TARGET_LINK_OPTS = ${TARGET_LINK_OPTS}")
 
-	try_compile(IS_SUPPORTED
-		${CMAKE_CURRENT_BINARY_DIR}
-		"${CMAKE_CURRENT_FUNCTION_LIST_DIR}/mh-CheckUnicodeSupport.cpp"
-		CXX_STANDARD 20
-		COMPILE_DEFINITIONS "${TARGET_CXX_OPTS}"
-		LINK_OPTIONS "${TARGET_LINK_OPTS}"
-		OUTPUT_VARIABLE TRY_COMPILE_OUTPUT)
+	# Try to compile a simple program first to check if Unicode support works
+	set(TEST_CODE "
+	#include <string>
+	#include <cuchar>
+	#include <cstddef>
+
+	int main() {
+		std::u16string test = u\"Hello\";
+		
+		// Test mbrtoc32 function which is problematic on some compilers (Apple Clang 17+)
+		char32_t c32;
+		char s[5] = \"test\";
+		std::mbstate_t ps{};
+		std::size_t result = std::mbrtoc32(&c32, s, 5, &ps);
+		
+		return 0;
+	}")
+	
+	check_cxx_source_compiles("${TEST_CODE}" IS_SUPPORTED)
 
 	message("${CMAKE_CURRENT_FUNCTION} ${IS_SUPPORTED_OUT} = ${IS_SUPPORTED}")
-	if (NOT IS_SUPPORTED)
-		message("${CMAKE_CURRENT_FUNCTION} output = ${TRY_COMPILE_OUTPUT}")
-	endif()
-
+	
+	# Set result in parent scope
 	set(${IS_SUPPORTED_OUT} ${IS_SUPPORTED} PARENT_SCOPE)
+	
+	# If Unicode support is broken, set the MH_BROKEN_UNICODE flag
+	if(NOT IS_SUPPORTED)
+		message(STATUS "Unicode support is broken - setting MH_BROKEN_UNICODE=1")
+		add_compile_definitions(MH_BROKEN_UNICODE=1)
+	endif()
 
 endfunction()
